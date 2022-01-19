@@ -106,7 +106,7 @@ namespace Ps5LinkGenerator
             if (textBox1.Text == "")
                 return;
 
-            Clipboard.SetText(textBox1.Text);
+            System.Diagnostics.Process.Start(textBox1.Text);
         }
     }
 }
