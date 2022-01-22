@@ -29,6 +29,9 @@ namespace Ps5LinkGenerator
         List<Ps5List> list = new List<Ps5List>();
         private void AddList()
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
             WebClient wc = new WebClient();
             string[] data = wc.DownloadString("https://raw.githubusercontent.com/halolck/Ps5UpdatorGenerator/main/Data").Split('\n');
 
